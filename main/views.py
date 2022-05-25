@@ -143,7 +143,7 @@ class FilmesAPIView(APIView):
             return Response(serializer.data)          
         elif 'categoria' in request.GET:
             statusCategoria = request.GET['categoria']
-            filmes = Filmes.objects.filter(idCategoriaFK=statusCategoria)
+            filmes = Filmes.objects.filter(idCategoriaFK=statusCategoria)                        
             serializer = FilmesGETSerializer(filmes, many=True)
             return Response(serializer.data)          
         elif pk == '':
